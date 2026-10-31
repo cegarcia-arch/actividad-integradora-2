@@ -10,6 +10,37 @@ export function validarTitulo(titulo) {
   return titulo.trim().length > 0;
 }
 
+export function obtenerTareasVisibles(tareas, busqueda, estado, orden) {
+  const texto = busqueda.trim().toLowerCase();
+  const visibles = tareas.filter(tarea => {
+    const coincideTitulo = tarea.titulo.toLowerCase().includes(texto);
+    const coincideEstado = estado === 'todas'
+      || (estado === 'pendientes' && !tarea.completada)
+      || (estado === 'completadas' && tarea.completada);
+    return coincideTitulo && coincideEstado;
+  });
+  const niveles = { alta: 1, media: 2, baja: 3 };
+  visibles.sort((primera, segunda) => {
+    if (orden === 'prioridad' && primera.prioridad !== segunda.prioridad) {
+      return niveles[primera.prioridad] - niveles[segunda.prioridad];
+    }
+    return new Date(segunda.fechaCreacion) - new Date(primera.fechaCreacion);
+  });
+  return visibles;
+}
+
+export function contarTareas(tareas) {
+  const completadas = tareas.filter(tarea => tarea.completada).length;
+  return { total: tareas.length, pendientes: tareas.length - completadas, completadas };
+}
+
+export function mostrarContadores(tareas) {
+  const cantidades = contarTareas(tareas);
+  document.getElementById('total').textContent = cantidades.total;
+  document.getElementById('pendientes').textContent = cantidades.pendientes;
+  document.getElementById('completadas').textContent = cantidades.completadas;
+}
+
 export function mostrarErrorTitulo() {
   const campo = document.getElementById('titulo');
   document.getElementById('error-titulo').textContent = 'Escribe un título que no contenga solo espacios.';

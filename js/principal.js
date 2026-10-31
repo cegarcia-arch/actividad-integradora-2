@@ -1,13 +1,21 @@
 import {
   mostrarMensaje, validarTitulo, mostrarErrorTitulo, limpiarErrorTitulo,
-  prepararFormulario, mostrarTareas
+  prepararFormulario, mostrarTareas, obtenerTareasVisibles, mostrarContadores
 } from './interfaz.js';
 
 let tareas = [];
 let idEnEdicion = null;
 
 function actualizarPantalla() {
-  mostrarTareas(tareas, cambiarEstado, editarTarea, eliminarTarea);
+  const busqueda = document.getElementById('busqueda').value;
+  const estado = document.getElementById('estado').value;
+  const orden = document.getElementById('orden').value;
+  const visibles = obtenerTareasVisibles(tareas, busqueda, estado, orden);
+  mostrarTareas(visibles, cambiarEstado, editarTarea, eliminarTarea);
+  mostrarContadores(tareas);
+  document.getElementById('lista-vacia').textContent = tareas.length === 0
+    ? 'Todavía no hay tareas. Agrega la primera.'
+    : 'No hay tareas que coincidan con la búsqueda y el filtro.';
 }
 
 function aplicarCambios(nuevasTareas, mensaje) {
@@ -71,6 +79,9 @@ function cambiarEstado(id) {
 
 document.getElementById('formulario-tarea').addEventListener('submit', guardarFormulario);
 document.getElementById('titulo').addEventListener('input', limpiarErrorTitulo);
+document.getElementById('busqueda').addEventListener('input', actualizarPantalla);
+document.getElementById('estado').addEventListener('change', actualizarPantalla);
+document.getElementById('orden').addEventListener('change', actualizarPantalla);
 document.getElementById('cancelar').addEventListener('click', () => {
   idEnEdicion = null;
   prepararFormulario();
