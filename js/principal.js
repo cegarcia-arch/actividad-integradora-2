@@ -129,3 +129,25 @@ async function iniciarAplicacion() {
 }
 
 iniciarAplicacion();
+
+function mostrarEstadoConexion() {
+  const aviso = document.getElementById('aviso-conexion');
+  aviso.hidden = navigator.onLine;
+  aviso.textContent = 'Sin conexión. Puedes trabajar con las tareas guardadas en este navegador.';
+}
+
+async function prepararModoSinInternet() {
+  if (!('serviceWorker' in navigator)) return;
+  try {
+    await navigator.serviceWorker.register('./sw.js');
+  } catch (error) {
+    const aviso = document.getElementById('aviso-conexion');
+    aviso.hidden = false;
+    aviso.textContent = 'No se pudieron preparar los archivos para abrir la página sin internet. Las tareas siguen guardándose en este navegador.';
+  }
+}
+
+window.addEventListener('online', mostrarEstadoConexion);
+window.addEventListener('offline', mostrarEstadoConexion);
+mostrarEstadoConexion();
+prepararModoSinInternet();
