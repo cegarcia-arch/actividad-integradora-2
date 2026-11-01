@@ -21,6 +21,10 @@ Fecha: 1 de noviembre de 2026. Pruebas realizadas por Codex durante el desarroll
 
 El borrado de todas las tareas se hizo únicamente sobre los ejemplos de esta aplicación nueva. Después se crearon tres tareas de demostración mediante el formulario; sus títulos no afirman actividades realizadas personalmente por Leo.
 
+## Prueba manual en Firefox realizada por el familiar
+
+El 1 de noviembre de 2026, el familiar compartió capturas reales de Firefox con la opción **Offline** activada. La primera muestra «Prueba sin conexión», 201 tareas en total (111 pendientes y 90 completadas) y el aviso «Tareas recuperadas del almacenamiento local». La segunda, después de editar y completar la tarea, muestra «Prueba sin conexión - completada», la casilla marcada, 110 pendientes, 91 completadas y el mismo aviso de recuperación. Son evidencias de recarga y persistencia durante la simulación sin red en DevTools. Se conservan como `prueba-offline-firefox.png` y `prueba-offline-editada-firefox.png`. Esta prueba no se atribuye a Leo ni demuestra una desconexión física del equipo.
+
 ## Pruebas de integración con dependencias simuladas
 
 Se ejecutaron los módulos reales con Node.js, sustituyendo red, almacenamiento y elementos DOM por objetos de prueba. Los 16 escenarios pasaron:
@@ -49,11 +53,14 @@ El script auxiliar se conserva fuera de la aplicación, en la carpeta de trabajo
 - `lista-vacia-tras-recargar.jpg`: aplicación con cero tareas después del borrado y la recarga.
 - `aplicacion.jpg`: lista de demostración ordenada por prioridad.
 - `recarga-sin-servidor.jpg`: vista completa después de recargar y guardar con el servidor local detenido.
+- `prueba-offline-firefox.png`: tarea recuperada en Firefox con la opción Offline visible.
+- `prueba-offline-editada-firefox.png`: tarea editada y completada, recuperada con Offline visible.
+- `almacenamiento-local-firefox.png`: panel de almacenamiento local de Firefox con el JSON; el panel «Valor interpretado» muestra `actividad2_leo_tareas: Array`.
+- `almacenamiento-local-tarea-completada-firefox.png`: el panel «Valor interpretado» muestra el objeto de la tarea de prueba con título editado, prioridad alta y `completada: true`, junto a la tarea en la página.
 
 ## Pendiente
 
-- Captura real de Application > Local Storage mostrando `actividad2_leo_tareas` y el JSON.
-- Comprobación de recarga y edición con internet completamente desconectado, tras la primera carga y la instalación de la caché.
+- El Word nombra literalmente «Application > Local Storage». Firefox usa el panel equivalente «Almacenamiento > Almacenamiento local». Si se exige esa interfaz exacta, falta una captura adicional en Chrome o Edge.
 - Revisión personal de Leo.
 - Autorización y publicación del repositorio y del sitio; comprobación en las direcciones definitivas.
 - Sustituir los pendientes del informe por enlaces y evidencias verificados.

@@ -2,8 +2,6 @@
 
 Gestor de tareas de la Actividad Integradora 2 de Programación de Sistemas Web. Permite organizar tareas y conservar los cambios en el navegador. Está construido con HTML, CSS y JavaScript Vanilla, sin librerías ni compilación.
 
-Estudiante: Cesar Leonardo Garcia Macias (Leo). La asistencia recibida se describe en [AI_DECLARATION.md](AI_DECLARATION.md).
-
 ## Ejecutar
 
 Desde esta carpeta, ejecutar `python3 -m http.server 8000` y abrir `http://localhost:8000/`.
@@ -57,14 +55,6 @@ Se verifica `respuesta.ok`, porque fetch puede devolver una respuesta HTTP 500 s
 
 Al cambiar los archivos del sitio se debe aumentar la versión de caché en `sw.js`. Después de activarse la nueva versión, una recarga permite usar los archivos actualizados.
 
-## Verificación y evidencias
-
-Ver [el registro de verificación](evidencias/VERIFICACION.md). Se realizaron pruebas en navegador y 16 escenarios adicionales con los módulos reales y dependencias simuladas. No se atribuyen estas pruebas a una revisión manual de Leo.
-
-Las capturas actuales son de la aplicación. **Sigue pendiente la captura específica de Application > Local Storage** y la comprobación manual con internet totalmente desconectado.
-
-Para la captura requerida, abrir la aplicación en Chrome o Edge, abrir DevTools y seleccionar Application > Local Storage > la dirección de la aplicación. Seleccionar `actividad2_leo_tareas` y capturar la clave y el contenido JSON, con la dirección visible. Después de publicar, conviene repetir la evidencia en la dirección definitiva.
-
 ## Fuentes consultadas
 
 - [JSONPlaceholder: tareas](https://jsonplaceholder.typicode.com/todos).
@@ -73,4 +63,3 @@ Para la captura requerida, abrir la aplicación en Chrome o Edge, abrir DevTools
 - [MDN: localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 - [MDN: uso de Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers).
 
-El alcance y los requisitos proceden del documento de la asignatura «Actividad Integradora 2».

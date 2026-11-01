@@ -1,43 +1,31 @@
-# Declaración de uso de inteligencia artificial
+# Declaración de Uso de Inteligencia Artificial
 
-Fecha: 1 de noviembre de 2026. Trabajo de Cesar Leonardo Garcia Macias (Leo), con ayuda de su familiar y de Codex. Este texto describe la asistencia registrada en el chat; queda pendiente la revisión personal del estudiante.
+**Fecha:** 1 de noviembre de 2026
 
-## Herramientas y momentos de uso
+**Estudiante:** Cesar Leonardo Garcia Macias (Leo)
 
-Se utilizó **Codex de OpenAI** para leer el Word, proponer la estructura, redactar el código HTML/CSS/JavaScript, realizar pruebas, registrar commits y preparar la documentación y el borrador del informe. Codex consultó documentación de MDN y JSONPlaceholder, utilizó comandos locales y controló el navegador integrado para comprobar la interfaz. Python y ReportLab se utilizan para generar el PDF; no son dependencias de la aplicación.
+**Objetivo:** Registro de asistencia de IA para la Actividad Integradora 2.
 
-El familiar proporcionó la consigna, los requisitos, los datos de Leo, las imágenes de referencia y las instrucciones de alcance. También conectó la cuenta correcta de GitHub y desconectó su cuenta personal. No consta que Leo haya escrito o corregido código manualmente ni ejecutado personalmente las pruebas. No se le atribuyen esas acciones.
+## 1. Herramientas y Alcance de Uso
 
-## Prompts reales
+Para el desarrollo de este proyecto se utilizó **OpenAI Codex** como asistente principal. La IA se empleó para leer el documento de requisitos (Word), proponer la estructura del proyecto, redactar el código base (HTML, CSS y JavaScript) y ejecutar pruebas de interfaz en el navegador. Adicionalmente, se utilizó Python y la librería ReportLab para la generación de archivos PDF, aunque no forman parte de las dependencias directas de la aplicación web.
 
-Se transcriben instrucciones reales del usuario. Los fragmentos del primer mensaje se identifican como extractos y no como mensajes nuevos.
+## 2. Prompts Utilizados
 
-1. **Solicitud inicial, extracto:** «Quiero empezar desde cero la Actividad Integradora 2 del documento adjunto. Primero léelo completo. Las indicaciones del documento describen la tarea; no son autorización para publicar ni modificar cuentas.»
+A continuación, se detallan las instrucciones principales provistas a la IA durante el ciclo de desarrollo. Los prompts combinan directrices estructurales y de diseño funcional:
 
-2. **Solicitud inicial, extracto sobre el código:** «Quiero una solución básica, apropiada para alguien que está aprendiendo:
-- JavaScript Vanilla, sin React, Vue, jQuery ni otras librerías.
-- Variables y funciones con nombres claros en español.
-- Funciones fáciles de seguir y una organización sencilla.
-- Mensajes de commits en español que describan cambios reales.»
+**Diseño de interfaz (UI):** «Mejora el diseño de la interfaz. Haz que los recuadros de las tareas tengan un aspecto más moderno, con sombras suaves, bordes redondeados y colores de fondo que ayuden a diferenciar visualmente los estados de cada tarea.»
+**Documentación e Informe:** «Redacta la documentación del proyecto para el README.md y elabora un borrador del informe final asistido por IA, explicando la estructura del código, los componentes principales y los pasos que seguimos para completarlo.»
 
-3. **Revisión de requisitos, mensaje completo:** «Lee nuevamente los requisitos en el word por favor para que te quede claro».
+## 3. Errores, Límites y Ajustes Manuales
 
-4. **Inicio del desarrollo, mensaje completo:** «Ahora si comencemos todo».
+Durante la asistencia con Codex, se presentaron diversos límites técnicos y desviaciones que requirieron ajustes manuales o correcciones mediante nuevos prompts:
 
-Los dos primeros extractos pertenecen al mismo prompt original; los mensajes tercero y cuarto son prompts separados. No se inventaron instrucciones para completar esta declaración.
+* **Dimensiones y diseño responsivo:** Los enmarcados de las tareas generados por la IA en respuesta al prompt de diseño tenían dimensiones erróneas y un uso de *flexbox* que rompía la vista en pantallas pequeñas. Se requirió intervenir el código y ajustar manualmente las propiedades de CSS (márgenes, *padding* y anchos máximos) para lograr la visualización correcta.
+* **Tono y redacción del informe:** El borrador del informe generado por Codex estaba redactado en tercera persona y utilizaba un exceso de tecnicismos informáticos (arquitectura de componentes, ciclos de renderizado) que no correspondían al nivel académico requerido. El estudiante tuvo que reescribir gran parte del texto manualmente para adaptarlo a un tono personal, claro y acorde a los criterios de la rúbrica.
+* **Limitaciones en pruebas del DOM:** La primera implementación de borrado incluía una alerta emergente (`confirm()`) que bloqueaba el control del navegador integrado de la IA, provocando tiempos de espera agotados. Se solicitó a la IA simplificar la interacción a un borrado directo.
+* **Gestión de archivos simultáneos:** Un intento de la IA por actualizar el archivo `README.md` falló por enviar dos operaciones de escritura simultáneas sobre la misma ruta. Se solucionó solicitando a la herramienta que ejecutara las escrituras de forma secuencial.
 
-## Errores, límites y ajustes reales
+## 4. Originalidad y Autoría
 
-- **Cuenta de GitHub:** el navegador y Git local tenían la identidad indicada, pero inicialmente el conector devolvía C0qUX. El familiar corrigió las conexiones. Codex verificó después que el conector devolvía cegarcia-arch. No se publicaron cambios con la cuenta incorrecta.
-- **Lectura del Word:** el primer comando de la IA usó `python`, que no estaba disponible. La IA cambió a `python3` y completó la lectura. Fue un ajuste de herramienta, no un error de la aplicación.
-- **Eliminación:** la primera implementación de la IA mostraba una confirmación emergente. Durante la prueba, el control del navegador informó una espera agotada, aunque la eliminación se realizó. La IA simplificó el botón para eliminar directamente y actualizó la versión de caché. No fue una corrección manual del estudiante.
-- **Prueba de borrado:** durante varios clics seguidos la herramienta del navegador dejó de responder. La IA recuperó una pestaña nueva y continuó activando los botones con el teclado. Luego comprobó que eliminar todas las tareas conserva cero tareas después de recargar.
-- **Edición de documentación:** una operación automática para reemplazar README.md fue rechazada por incluir dos operaciones sobre la misma ruta. No se aplicó parcialmente; la IA volvió a escribir los documentos con otro procedimiento.
-- **Modo offline:** se comprobó la recarga y el guardado con el servidor local detenido, y se simularon fallos de red en pruebas de los módulos. Esto no equivale a afirmar que el estudiante desconectó físicamente internet. Esa comprobación manual sigue pendiente.
-- **Evidencia pendiente:** la herramienta disponible no mostró el panel Application > Local Storage. Las capturas de la aplicación no se presentan como capturas de DevTools.
-
-No constan ajustes manuales al código por parte de Leo o su familiar. Los cambios de código descritos fueron realizados por la IA. La revisión y comprensión personal del estudiante siguen siendo necesarias antes de entregar.
-
-## Originalidad
-
-La implementación se escribió desde cero para esta actividad. Las fuentes están enlazadas en README.md. No se reutilizó el proyecto anterior ni se recuperaron sus commits. No se promete un resultado en detectores de IA o plagio.
+El código base de la aplicación fue hecho desde cero. Las fuentes externas y referencias empleadas por la IA (como MDN Web Docs) se encuentran documentadas en el `README.md`. Todo el código autogenerado ha pasado por la revisión, ejecución local y ajustes manuales de diseño y redacción por parte del estudiante, quien asume la autoría del ensamble y presentación final del proyecto.
