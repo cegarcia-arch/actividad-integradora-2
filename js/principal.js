@@ -72,7 +72,6 @@ function editarTarea(id) {
 }
 
 function eliminarTarea(id) {
-  if (!window.confirm('¿Eliminar esta tarea?')) return;
   if (aplicarCambios(tareas.filter(tarea => tarea.id !== id), 'Tarea eliminada.')) {
     if (idEnEdicion === id) {
       idEnEdicion = null;

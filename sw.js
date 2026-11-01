@@ -1,6 +1,6 @@
 // Guarda los archivos de la aplicación. Las tareas siguen en localStorage.
 const PREFIJO_CACHE = `tareas-leo-${self.registration.scope}`;
-const NOMBRE_CACHE = `${PREFIJO_CACHE}-v1`;
+const NOMBRE_CACHE = `${PREFIJO_CACHE}-v2`;
 const ARCHIVOS = [
   './', './index.html', './css/estilos.css', './js/principal.js',
   './js/interfaz.js', './js/api.js', './js/almacenamiento.js'
