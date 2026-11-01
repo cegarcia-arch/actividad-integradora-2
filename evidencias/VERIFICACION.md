@@ -58,9 +58,12 @@ El script auxiliar se conserva fuera de la aplicación, en la carpeta de trabajo
 - `almacenamiento-local-firefox.png`: panel de almacenamiento local de Firefox con el JSON; el panel «Valor interpretado» muestra `actividad2_leo_tareas: Array`.
 - `almacenamiento-local-tarea-completada-firefox.png`: el panel «Valor interpretado» muestra el objeto de la tarea de prueba con título editado, prioridad alta y `completada: true`, junto a la tarea en la página.
 
+## Publicación comprobada
+
+El repositorio público [cegarcia-arch/actividad-integradora-2](https://github.com/cegarcia-arch/actividad-integradora-2) contiene nueve commits en `main`. GitHub Pages informó una construcción correcta desde la raíz de esa rama. La dirección [de la aplicación](https://cegarcia-arch.github.io/actividad-integradora-2/) y los archivos HTML, CSS, JavaScript y `sw.js` respondieron con HTTP 200. La herramienta disponible no permitió hacer una prueba interactiva en el navegador sobre esa dirección pública.
+
 ## Pendiente
 
 - El Word nombra literalmente «Application > Local Storage». Firefox usa el panel equivalente «Almacenamiento > Almacenamiento local». Si se exige esa interfaz exacta, falta una captura adicional en Chrome o Edge.
 - Revisión personal de Leo.
-- Autorización y publicación del repositorio y del sitio; comprobación en las direcciones definitivas.
-- Sustituir los pendientes del informe por enlaces y evidencias verificados.
+- Comprobar manualmente las funciones en la dirección pública con el navegador de Leo.

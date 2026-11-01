@@ -2,10 +2,12 @@
 
 Gestor de tareas de la Actividad Integradora 2 de Programación de Sistemas Web. Permite organizar tareas y conservar los cambios en el navegador. Está construido con HTML, CSS y JavaScript Vanilla, sin librerías ni compilación.
 
+Repositorio público: [cegarcia-arch/actividad-integradora-2](https://github.com/cegarcia-arch/actividad-integradora-2). Aplicación: [abrir en GitHub Pages](https://cegarcia-arch.github.io/actividad-integradora-2/).
+
 ## Ejecutar
 
 Desde esta carpeta, ejecutar `python3 -m http.server 8000` y abrir `http://localhost:8000/`.
-Los módulos ES6 requieren un servidor HTTP; no abrir el HTML con doble clic. Para publicar se necesita HTTPS (por ejemplo, GitHub Pages). No se ha publicado todavía.
+Los módulos ES6 requieren un servidor HTTP; no abrir el HTML con doble clic. La versión publicada utiliza HTTPS en GitHub Pages.
 
 ## Funciones
 
